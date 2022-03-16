@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let a = +prompt("Nhập vào số số nguyên tố muốn hiển thị");
+    let cnt = 0;
+    let n = 2;
+    while (cnt < a) {
+        if(n==2){
+            cnt ++;
+            document.write(" "+n)
+            n ++;
+        }
+        if(n==3){
+            cnt ++;
+            document.write(" "+n)
+            n ++;
+
+        }
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            // console.log("căn",Math.sqrt(n))
+            // console.log("gia troicua n",n)
+            // console.log("gia tri i",i)
+            if (n % i === 0) {
+                // console.log("gia tri i",i)
+                n++;
+            }else {
+                cnt ++;
+                // console.log("đếm",cnt)
+                document.write(" "+n)
+                n++;
+            }
+        }
+    }
+</script>
