@@ -12,31 +12,28 @@
     let a = +prompt("Nhập vào số số nguyên tố muốn hiển thị");
     let cnt = 0;
     let n = 2;
-    while (cnt < a) {
-        if(n==2){
-            cnt ++;
-            document.write(" "+n)
-            n ++;
-        }
-        if(n==3){
-            cnt ++;
-            document.write(" "+n)
-            n ++;
-
-        }
-        for (let i = 2; i <= Math.sqrt(n); i++) {
-            // console.log("căn",Math.sqrt(n))
-            // console.log("gia troicua n",n)
-            // console.log("gia tri i",i)
-            if (n % i === 0) {
-                // console.log("gia tri i",i)
-                n++;
-            }else {
-                cnt ++;
-                // console.log("đếm",cnt)
-                document.write(" "+n)
-                n++;
+    function isPrime(a){
+        let count = 0;
+        if (a<2){
+            return true;
+        }else {
+            for (i=2;i<=Math.sqrt(a);i++){
+                if (a%i==0){
+                    count ++;
+                }
             }
+            if (count>0){
+                return false;
+            }else {return true}
+        }
+    }
+    while (cnt<=a){
+        if(isPrime(n)){
+            document.write(" "+n);
+            cnt ++;
+            n++;
+        }else {
+            n++;
         }
     }
 </script>
